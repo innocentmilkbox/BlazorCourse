@@ -1,0 +1,74 @@
+﻿@page "/hotelrooms"
+@using BlazorApp_Server.Models
+
+<h2>Room List</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Room Name</th>
+            <th>Room Price</th>            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var z in RoomsList)
+        {
+            <tr>
+                <td>
+                    <input @bind-value="@z.RoomName" @bind-value:event="oninput"/>
+                </td>
+                <td>
+                    <input @bind-value="@z.Price" @bind-value:event="oninput" />
+                </td>
+                @foreach(var t in z.RoomProps)
+                {
+                    <td>
+                        @t.Name&nbsp;@t.Value
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+@foreach(var z in RoomsList)
+{
+    <p>@z.RoomName's price is @z.Price</p>
+}
+
+@code
+{
+    string SelectedRoomProp = "";
+    List<HotelRoom> RoomsList = new List<HotelRoom>();
+
+
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        RoomsList.Add(new HotelRoom()
+        {
+            Id = 201,
+            RoomName = "Villa Suite",
+            Price = 499,
+            IsActive = true,
+            RoomProps = new List<HotelRoomProp>
+            {
+                new HotelRoomProp{Id = 1, Name = "Sq ft", Value = "150"},
+                new HotelRoomProp{Id = 2, Name = "Occupancy", Value = "13"}
+            }
+        });
+        RoomsList.Add(new HotelRoom()
+        {
+            Id = 202,
+            RoomName = "Villa Suite One Bed Room",
+            Price = 399,
+            IsActive = true,
+            RoomProps = new List<HotelRoomProp>
+            {
+                new HotelRoomProp{Id = 1, Name = "Sq ft", Value = "100"},
+                new HotelRoomProp{Id = 2, Name = "Occupancy", Value = "6"}
+            }
+        });
+    }
+
+}

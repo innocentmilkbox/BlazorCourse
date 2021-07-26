@@ -1,0 +1,29 @@
+﻿@using BlazorApp_Server.Models
+<div class="w-25 bg-light m-2 p-4">
+    <h3 class="m-2">Room - @hotelRoom.Id</h3>
+    <input type="checkbox" @onchange="SelectCheckboxRoomChanged" /><span>@hotelRoom.RoomName</span>
+    <p>@hotelRoom.Price</p>
+
+    <input type="checkbox" @bind-value="@hotelRoom.IsActive" checked="@(hotelRoom.IsActive?"checked":null)" @bind-value:event="oninput" />&nbsp;Is Active?
+    <p>This room is @(hotelRoom.IsActive?"active":"inactive")</p>
+    @if (hotelRoom.IsActive)
+    {
+        foreach (var tt in hotelRoom.RoomProps)
+        {
+            <p>@tt.Name - @tt.Value</p>
+        }
+    }
+    <ButtonsComponent isAdmin="true"></ButtonsComponent>
+
+</div>
+
+@code {
+    [Parameter]
+    public HotelRoom hotelRoom { get; set; }
+    [Parameter]
+    public EventCallback<bool> OnRoomCheckboxSelection { get; set; }
+    protected async Task SelectCheckboxRoomChanged(ChangeEventArgs e)
+    {
+        await OnRoomCheckboxSelection.InvokeAsync((bool)e.Value);
+    }
+}

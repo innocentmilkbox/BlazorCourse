@@ -1,0 +1,16 @@
+﻿@using BlazorApp_Server.Models
+<div class="w-25 bg-light m-2 p-4" @onclick="(args)=> SelectAmenitie(args, ameni.Name)">
+    <h3 class="m-2">Amenitie - @ameni.Id</h3>
+    <p>@ameni.Name</p>
+    <p>@ameni.Descriptions</p>         
+</div>
+@code {
+    [Parameter]
+    public Amenitie ameni { get; set; }
+    [Parameter]
+    public EventCallback<string> GetSelectedAmenitieIndex { get; set; }
+    protected async Task SelectAmenitie(MouseEventArgs e, string name)
+    {
+        await GetSelectedAmenitieIndex.InvokeAsync((string)name);
+    }
+}

@@ -1,0 +1,92 @@
+﻿@page "/demohotel"
+@using Models
+@using BlazorApp_Server.Pages.Learning.MinorComponents
+
+
+<div class="row container">
+    <div class="col-12">
+        <h2>Room List</h2>
+        <span>Rooms selected: @selectedRooms</span>
+    </div>
+    @foreach (var ro in RoomsList)
+    {
+        <IndividualRoom OnRoomCheckboxSelection="RoomSelectedCounterChanged" hotelRoom="ro"></IndividualRoom>
+    }
+    <div class="col-12">
+        <h2>Amenities List</h2>
+    </div>
+    @foreach(var ame in AmenitiesList)
+    {
+        <IndividualAmenitie GetSelectedAmenitieIndex="AmenitieSelected" ameni="ame"></IndividualAmenitie>
+    }
+    <div class="col-12">
+        <p>Selected Amenitie: @selectedAmenitie</p>
+    </div>
+</div>
+<div>
+    
+</div>
+
+
+@code {
+    List<HotelRoom> RoomsList = new List<HotelRoom>();
+    List<Amenitie> AmenitiesList = new List<Amenitie>();
+    public int selectedRooms { get; set; } = 0;
+    public string selectedAmenitie { get; set; } = "";
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        RoomsList.Add(new HotelRoom()
+        {
+            Id = 201,
+            RoomName = "Villa Suite",
+            Price = 499,
+            IsActive = true,
+            RoomProps = new List<HotelRoomProp>
+            {
+                new HotelRoomProp{Id = 1, Name = "Sq ft", Value = "150"},
+                new HotelRoomProp{Id = 2, Name = "Occupancy", Value = "13"}
+            }
+        });
+        RoomsList.Add(new HotelRoom()
+        {
+            Id = 202,
+            RoomName = "Villa Suite One Bed Room",
+            Price = 399,
+            IsActive = true,
+            RoomProps = new List<HotelRoomProp>
+            {
+                new HotelRoomProp{Id = 1, Name = "Sq ft", Value = "100"},
+                new HotelRoomProp{Id = 2, Name = "Occupancy", Value = "6"}
+            }
+        });
+        AmenitiesList.Add(new Amenitie
+        {
+            Id = 111,
+            Name = "Gym",
+            Descriptions = "24/7 Gym room available"
+        });
+        AmenitiesList.Add(new Amenitie
+        {
+            Id = 222,
+            Name = "Swimming Pool",
+            Descriptions = "Pool room is open from 6am to 10pm"
+        });
+        AmenitiesList.Add(new Amenitie
+        {
+            Id = 333,
+            Name = "Free Breakfast",
+            Descriptions = "Enjoy free breakfast at our hotel"
+        });
+    }
+    protected void RoomSelectedCounterChanged(bool isRoomSelected)
+    {
+        if (isRoomSelected) selectedRooms++;
+        else selectedRooms--;
+    }
+    protected void AmenitieSelected(string namez)
+    {
+        selectedAmenitie = namez;
+    }
+}
