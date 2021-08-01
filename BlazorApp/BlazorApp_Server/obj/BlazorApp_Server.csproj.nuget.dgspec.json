@@ -1,36 +1,50 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dell\\Desktop\\BlazorApp\\BlazorApp_Server\\BlazorApp_Server.csproj": {}
+    "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\BlazorApp_Server\\BlazorApp_Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dell\\Desktop\\BlazorApp\\BlazorApp_Server\\BlazorApp_Server.csproj": {
+    "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\BlazorApp_Server\\BlazorApp_Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\Desktop\\BlazorApp\\BlazorApp_Server\\BlazorApp_Server.csproj",
+        "projectUniqueName": "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\BlazorApp_Server\\BlazorApp_Server.csproj",
         "projectName": "BlazorApp_Server",
-        "projectPath": "C:\\Users\\Dell\\Desktop\\BlazorApp\\BlazorApp_Server\\BlazorApp_Server.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\Desktop\\BlazorApp\\BlazorApp_Server\\obj\\",
+        "projectPath": "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\BlazorApp_Server\\BlazorApp_Server.csproj",
+        "packagesPath": "C:\\Users\\hle96\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\BlazorApp_Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hle96\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\Business\\Business.csproj": {
+                "projectPath": "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\Business\\Business.csproj"
+              },
+              "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\Common\\Common.csproj": {
+                "projectPath": "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\Common\\Common.csproj"
+              },
+              "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\DataAccess\\DataAccess.csproj"
+              },
+              "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\Models\\Models.csproj": {
+                "projectPath": "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\Models\\Models.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -40,8 +54,54 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
+            "Blazored.TextEditor": {
+              "target": "Package",
+              "version": "[1.0.3, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "microsoft.aspnetcore.diagnostics.entityframeworkcore": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -60,7 +120,272 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.205\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\Business\\Business.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\Business\\Business.csproj",
+        "projectName": "Business",
+        "projectPath": "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\Business\\Business.csproj",
+        "packagesPath": "C:\\Users\\hle96\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\Business\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\hle96\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\DataAccess\\DataAccess.csproj"
+              },
+              "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\Models\\Models.csproj": {
+                "projectPath": "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\Models\\Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.205\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\Common\\Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\Common\\Common.csproj",
+        "projectName": "Common",
+        "projectPath": "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\Common\\Common.csproj",
+        "packagesPath": "C:\\Users\\hle96\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\hle96\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.205\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\DataAccess\\DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\DataAccess\\DataAccess.csproj",
+        "projectName": "DataAccess",
+        "projectPath": "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\hle96\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\hle96\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "microsoft.aspnetcore.diagnostics.entityframeworkcore": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.205\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\Models\\Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\Models\\Models.csproj",
+        "projectName": "Models",
+        "projectPath": "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\Models\\Models.csproj",
+        "packagesPath": "C:\\Users\\hle96\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hle96\\ZZZZ\\Blazor\\BlazorCourse\\BlazorCourse\\BlazorApp\\Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\hle96\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.205\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,8 +1,11 @@
-﻿@using BlazorApp_Server.Models
+﻿@using BlazorApp_Server.Model
 <div class="w-25 bg-light m-2 p-4" @onclick="(args)=> SelectAmenitie(args, ameni.Name)">
     <h3 class="m-2">Amenitie - @ameni.Id</h3>
     <p>@ameni.Name</p>
-    <p>@ameni.Descriptions</p>         
+    <p>@ameni.Descriptions</p>     
+    <p>Render Frangment Example:</p>
+    <span><p> @Fragment1</p></span>
+    <span><p> @Fragment2</p></span>
 </div>
 @code {
     [Parameter]
@@ -13,4 +16,9 @@
     {
         await GetSelectedAmenitieIndex.InvokeAsync((string)name);
     }
+
+    [Parameter]
+    public RenderFragment Fragment1 { get; set; }
+    [Parameter]
+    public RenderFragment Fragment2 { get; set; }
 }

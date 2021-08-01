@@ -1,0 +1,98 @@
+﻿@page "/hotel-amenity/create"
+@page "/hotel-amenity/edit/{Id:int}"
+
+@using Models
+@using Business.Repository.IRepository
+@inject IJSRuntime jsRuntime
+@inject IAmenityRepos amenityRepos
+@inject NavigationManager navigator
+@attribute [Authorize(Roles = Common.SD.Role_Admin)]
+
+<div class="row">
+    <h3 class="card-title text-info mb-3 ml-3 col-12">@Title Amenity</h3>
+    <div class="col-md-12">
+        <EditForm Model="@amenityModel" OnValidSubmit="@SubmitForm">
+            <DataAnnotationsValidator></DataAnnotationsValidator>
+            <div class="form-group">
+                <label>Amenity Name</label>
+                <InputText @bind-Value="amenityModel.Name" class="form-control"></InputText>
+                <ValidationMessage For="()=>amenityModel.Name"></ValidationMessage>
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <InputText @bind-Value="amenityModel.Description" class="form-control"></InputText>
+                <ValidationMessage For="()=>amenityModel.Description"></ValidationMessage>
+            </div>
+            <div class="form-group">
+                <label>Start Time</label>
+                <InputNumber @bind-Value="amenityModel.StartTime" class="form-control"></InputNumber>
+                <ValidationMessage For="()=>amenityModel.StartTime"></ValidationMessage>
+            </div>
+            <div class="form-group">
+                <label>End Time</label>
+                <InputNumber @bind-Value="amenityModel.EndTime" class="form-control"></InputNumber>
+                <ValidationMessage For="()=>amenityModel.EndTime"></ValidationMessage>
+            </div>
+            <div class="form-group">
+                <label>Icon Style</label>
+                <InputText @bind-Value="amenityModel.Icon" class="form-control"></InputText>
+                <ValidationMessage For="()=>amenityModel.Icon"></ValidationMessage>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary">@Title Amenity</button>
+                <NavLink href="/hotel-amenity" class="btn btn-secondary">Back To Room List</NavLink>
+            </div>
+
+        </EditForm>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public int? Id { get; set; }
+
+    private AmenityDTO amenityModel { get; set; } = new AmenityDTO();
+    private string Title { get; set; } = "Create";
+
+    protected async override Task OnInitializedAsync()
+    {
+        if (Id != null)
+        {
+            Title = "Update";
+            amenityModel = await amenityRepos.GetAmenity(Id.Value);
+        }
+        else
+        {
+            amenityModel = new AmenityDTO();
+        }
+    }
+
+    private async Task SubmitForm()
+    {
+        var amemDetails = await amenityRepos.IsAmenityUnique(amenityModel.Name, amenityModel.Id);
+        if (amemDetails != null)
+        {
+            await jsRuntime.SwalFailure("Duplicated Amenity Name");
+            return;
+        }
+        try
+        {
+            if (amenityModel.Id != 0 && Title == "Update")
+            {
+                var amem = await amenityRepos.UpdateAmenity(Id.Value, amenityModel);
+                await jsRuntime.SwalSuccess("Update Amenity Successfully");
+            }
+            else
+            {
+                var createdAmenity = await amenityRepos.CreateAmenity(amenityModel);
+                await jsRuntime.SwalSuccess("Create Amenity Successfully.");
+            }
+
+        }
+        catch (Exception ex)
+        {
+            await jsRuntime.SwalFailure(ex.Message);
+        }
+        navigator.NavigateTo("hotel-amenity");
+    }
+}

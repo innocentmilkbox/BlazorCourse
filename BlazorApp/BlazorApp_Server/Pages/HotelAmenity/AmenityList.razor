@@ -1,0 +1,107 @@
+﻿@page "/hotel-amenity"
+
+@using Models
+@using Business.Repository.IRepository
+@inject IJSRuntime jsRuntime
+@inject IAmenityRepos amenityRepos
+
+@attribute [Authorize(Roles = Common.SD.Role_Admin)]
+
+<div class="row mt-4">
+    <div class="col-8">
+        <h4 class="card-title text-info">Amenity List</h4>
+    </div>
+    <div class="col-3 offset-1">
+        <NavLink href="hotel-amenity/create" class="btn btn-info form-control">Add New Amenity</NavLink>
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-12">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Open Time</th>
+                    <th>Icon</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (amenities.Any())
+                {
+                    foreach (var amem in amenities)
+                    {
+                        <tr>
+                            <td>@amem.Name</td>
+                            <td>@calculateTimeString(amem.StartTime) to @calculateTimeString(amem.EndTime)</td>
+                            <td><i class="@amem.Icon"></i></td>
+                            <td>
+                                <NavLink href="@($"hotel-amenity/edit/{amem.Id}")" class="btn btn-primary">Edit</NavLink>
+                                <button class="btn btn-danger" @onclick="()=>HandleDelete(amem.Id)">Delete</button>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="5">No records found</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<DeleteConfirmation ProcessSignalFromParent="IsProcessing" ConfirmationChanged="ConfirmDelete_Click"></DeleteConfirmation>
+
+@code {
+    private IEnumerable<AmenityDTO> amenities { get; set; } = new List<AmenityDTO>();
+    private int? deleteAmenityId { get; set; } = null;
+    private bool IsProcessing { get; set; } = false;
+    protected override async Task OnInitializedAsync()
+    {
+        amenities = await amenityRepos.GetAllAmenities();
+    }
+
+    private string calculateTimeString(float time)
+    {
+        float hour;
+        float minute;
+        string suffix = "am";
+        string minutePrefix = "";
+        hour = (time * 60) / 60;
+        minute = (time * 60) % 60;
+        if (hour / 12 >= 1)
+        {
+            hour = hour % 12;
+            suffix = "pm";
+        }
+        if (minute / 10 < 1)
+        {
+            minutePrefix = "0";
+        }
+        return hour + ":" + minutePrefix + minute + " " + suffix;
+    }
+
+    private async Task HandleDelete(int amenityId)
+    {
+        deleteAmenityId = amenityId;
+        await jsRuntime.InvokeVoidAsync("ShowDeleteConfirmationModal");
+    }
+
+    public async Task ConfirmDelete_Click(bool isConfirmed)
+    {
+        IsProcessing = true;
+        if (isConfirmed && deleteAmenityId != null)
+        {
+
+            await amenityRepos.DeleteAmenity(deleteAmenityId.Value);
+            await jsRuntime.SwalSuccess("Deleted Successfully");
+            amenities = await amenityRepos.GetAllAmenities();
+        }
+        await jsRuntime.InvokeVoidAsync("HideDeleteConfirmationModal");
+        IsProcessing = false;
+    }
+
+}

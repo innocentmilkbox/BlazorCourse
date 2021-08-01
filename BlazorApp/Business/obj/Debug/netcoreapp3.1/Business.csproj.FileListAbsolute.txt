@@ -1,0 +1,14 @@
+C:\Users\hle96\ZZZZ\Blazor\BlazorCourse\BlazorCourse\BlazorApp\Business\bin\Debug\netcoreapp3.1\Business.deps.json
+C:\Users\hle96\ZZZZ\Blazor\BlazorCourse\BlazorCourse\BlazorApp\Business\bin\Debug\netcoreapp3.1\Business.dll
+C:\Users\hle96\ZZZZ\Blazor\BlazorCourse\BlazorCourse\BlazorApp\Business\bin\Debug\netcoreapp3.1\Business.pdb
+C:\Users\hle96\ZZZZ\Blazor\BlazorCourse\BlazorCourse\BlazorApp\Business\obj\Debug\netcoreapp3.1\Business.csprojAssemblyReference.cache
+C:\Users\hle96\ZZZZ\Blazor\BlazorCourse\BlazorCourse\BlazorApp\Business\obj\Debug\netcoreapp3.1\Business.AssemblyInfoInputs.cache
+C:\Users\hle96\ZZZZ\Blazor\BlazorCourse\BlazorCourse\BlazorApp\Business\obj\Debug\netcoreapp3.1\Business.AssemblyInfo.cs
+C:\Users\hle96\ZZZZ\Blazor\BlazorCourse\BlazorCourse\BlazorApp\Business\obj\Debug\netcoreapp3.1\Business.csproj.CoreCompileInputs.cache
+C:\Users\hle96\ZZZZ\Blazor\BlazorCourse\BlazorCourse\BlazorApp\Business\obj\Debug\netcoreapp3.1\Business.dll
+C:\Users\hle96\ZZZZ\Blazor\BlazorCourse\BlazorCourse\BlazorApp\Business\obj\Debug\netcoreapp3.1\Business.pdb
+C:\Users\hle96\ZZZZ\Blazor\BlazorCourse\BlazorCourse\BlazorApp\Business\bin\Debug\netcoreapp3.1\DataAccess.dll
+C:\Users\hle96\ZZZZ\Blazor\BlazorCourse\BlazorCourse\BlazorApp\Business\bin\Debug\netcoreapp3.1\Models.dll
+C:\Users\hle96\ZZZZ\Blazor\BlazorCourse\BlazorCourse\BlazorApp\Business\bin\Debug\netcoreapp3.1\DataAccess.pdb
+C:\Users\hle96\ZZZZ\Blazor\BlazorCourse\BlazorCourse\BlazorApp\Business\bin\Debug\netcoreapp3.1\Models.pdb
+C:\Users\hle96\ZZZZ\Blazor\BlazorCourse\BlazorCourse\BlazorApp\Business\obj\Debug\netcoreapp3.1\Business.csproj.CopyComplete

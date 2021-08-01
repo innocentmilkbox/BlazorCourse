@@ -1,0 +1,26 @@
+﻿@page "/routinglearning"
+@page "/learnrouting"
+@page "/routinglearning/{parameter1}"
+@page "/routinglearning/{parameter1}/{parameter2}"
+
+<h3>RoutingLearning</h3>
+@if (Parameter1 != null)
+{
+    <h4>Parameter 1 : @Parameter1</h4>
+    if(Parameter2 != null)
+    {
+        <h4>Parameter 2 : @Parameter2</h4>
+    }
+}
+
+<NavLink class="btn btn-secondary" href="advancerouting?Param1=Blazzing&Param2=Blazor">
+    <span class="oi oi-list-rich" aria-hidden="true"></span> Routing Learning
+</NavLink>
+
+
+@code {
+    [Parameter]
+    public string Parameter1 { get; set; }
+    [Parameter]
+    public string Parameter2 { get; set; }
+}

@@ -1,5 +1,38 @@
-﻿<h3>ParentComponent</h3>
+﻿@using BlazorApp_Server.Pages.Learning.MinorComponents
+@page "/ParentComponent"
+<h3>ParentComponent</h3>
+
+<CascadingValue Value="@messageForGrandChild" Name="MessageFromGrandParent">
+    <CascadingValue Value="@luckyNumber" Name="LuckyNumberFromGrandParent">
+        <ChildComponent OnClickBtnMethod="ShowMessage" Title="Passed from the parent component">
+            <ChildContent>Something Render Fragement from parent</ChildContent>
+            <ChildContent2>Somehting comes again</ChildContent2>
+        </ChildComponent>
+    </CascadingValue>
+</CascadingValue>
+
+
+<p><b>@messageText</b></p>
+
+<AnotherChildComponent InputAttributes="InputAttributesFromParent"></AnotherChildComponent>
+ 
+@*<ChildComponent OnClickBtnMethod="ShowMessage" Title="Passed from the parent component">
+    
+</ChildComponent>*@
 
 @code {
 
+    public Dictionary<string, object> InputAttributesFromParent { get; set; } = new Dictionary<string, object>()
+    {
+        {"required", "required" },
+        {"placeholder", "Enter the room name from parent" },
+        {"maxLength", 5 }
+    };
+    private string messageForGrandChild = "This is the message for grand child";
+    public int luckyNumber { get; set; } = 7;
+    private string messageText = "";
+    private void ShowMessage(MouseEventArgs e)
+    {
+        messageText = "Blazzing text from child";
+    }
 }

@@ -1,0 +1,12 @@
+C:\Users\hle96\ZZZZ\Blazor\BlazorCourse\BlazorCourse\BlazorApp\Common\bin\Debug\net5.0\Common.deps.json
+C:\Users\hle96\ZZZZ\Blazor\BlazorCourse\BlazorCourse\BlazorApp\Common\bin\Debug\net5.0\Common.dll
+C:\Users\hle96\ZZZZ\Blazor\BlazorCourse\BlazorCourse\BlazorApp\Common\bin\Debug\net5.0\ref\Common.dll
+C:\Users\hle96\ZZZZ\Blazor\BlazorCourse\BlazorCourse\BlazorApp\Common\bin\Debug\net5.0\Common.pdb
+C:\Users\hle96\ZZZZ\Blazor\BlazorCourse\BlazorCourse\BlazorApp\Common\obj\Debug\net5.0\Common.csprojAssemblyReference.cache
+C:\Users\hle96\ZZZZ\Blazor\BlazorCourse\BlazorCourse\BlazorApp\Common\obj\Debug\net5.0\Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hle96\ZZZZ\Blazor\BlazorCourse\BlazorCourse\BlazorApp\Common\obj\Debug\net5.0\Common.AssemblyInfoInputs.cache
+C:\Users\hle96\ZZZZ\Blazor\BlazorCourse\BlazorCourse\BlazorApp\Common\obj\Debug\net5.0\Common.AssemblyInfo.cs
+C:\Users\hle96\ZZZZ\Blazor\BlazorCourse\BlazorCourse\BlazorApp\Common\obj\Debug\net5.0\Common.csproj.CoreCompileInputs.cache
+C:\Users\hle96\ZZZZ\Blazor\BlazorCourse\BlazorCourse\BlazorApp\Common\obj\Debug\net5.0\Common.dll
+C:\Users\hle96\ZZZZ\Blazor\BlazorCourse\BlazorCourse\BlazorApp\Common\obj\Debug\net5.0\ref\Common.dll
+C:\Users\hle96\ZZZZ\Blazor\BlazorCourse\BlazorCourse\BlazorApp\Common\obj\Debug\net5.0\Common.pdb
